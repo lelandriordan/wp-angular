@@ -1,0 +1,19 @@
+<div class="row">
+  <div class="col-md-4">
+
+    <div class="list-group">
+      <a
+      ng-repeat="post in posts"
+      ui-sref="app.posts.single({ id: post.id })"
+      class="list-group-item"
+      ng-class="{active: post.id == stateParams.id }">
+        <h4 class="list-group-item-heading">{{ post.title.rendered }}</h4>
+        <p class="list-group-item-text">{{ post.excerpt.rendered }}</p>
+      </a>
+    </div>
+  </div>
+
+  <div class="col-md-8">
+    <ui-view></ui-view>
+  </div>
+</div>
