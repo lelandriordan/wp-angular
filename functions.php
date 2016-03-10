@@ -13,15 +13,21 @@ function wpa_scripts() {
   /**
    * JavaScripts
    */
+
+  // Development
   wp_enqueue_script( 'wpa-angularjs', 'https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0/angular.js', array(), '1.5.0', true);
   wp_enqueue_script( 'wpa-angular-route', 'https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0/angular-route.js', array('wpa-angularjs'), '1.5.0', true);
   wp_enqueue_script( 'wpa-angular-resource', 'https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0/angular-resource.js', array('wpa-angularjs'), '1.5.0', true);
-
+  wp_enqueue_script( 'wpa-angular-sanitize', 'https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0/angular-sanitize.js', array('wpa-angularjs'), '1.5.0', true);
   wp_enqueue_script( 'wpa-ui-router', 'https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.18/angular-ui-router.js', array('wpa-angularjs'), '0.2.18', true);
 
-  // Development
-  wp_enqueue_script( 'wpa-app', get_template_directory_uri() . '/dist/js/app.js', array('wpa-angularjs', 'wpa-ui-router', 'wpa-angular-route', 'wpa-angular-resource'), '0.1.4', true );
+  wp_enqueue_script( 'wpa-app', get_template_directory_uri() . '/dist/js/app.js', array('wpa-angularjs'), '0.1.4', true );
+
   // Production - Minified
+  // wp_enqueue_script( 'wpa-angularjs', 'https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0/angular.min.js', array(), '1.5.0', true);
+  // wp_enqueue_script( 'wpa-angular-route', 'https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0/angular-route.min.js', array('wpa-angularjs'), '1.5.0', true);
+  // wp_enqueue_script( 'wpa-angular-resource', 'https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0/angular-resource.min.js', array('wpa-angularjs'), '1.5.0', true);
+  // wp_enqueue_script( 'wpa-ui-router', 'https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.18/angular-ui-router.min.js', array('wpa-angularjs'), '0.2.18', true);
   // wp_enqueue_script( 'wpa-app', get_template_directory_uri() . '/dist/js/app.min.js', array('wpa-angularjs', 'wpa-ui-router'), '0.1.0', true );
 
   wp_localize_script( 'wpa-app', 'wpaInfo',

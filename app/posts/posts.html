@@ -7,8 +7,8 @@
       ui-sref="app.posts.single({ id: post.id })"
       class="list-group-item"
       ng-class="{active: post.id == stateParams.id }">
-        <h4 class="list-group-item-heading">{{ post.title.rendered }}</h4>
-        <p class="list-group-item-text">{{ post.excerpt.rendered }}</p>
+        <h4 class="list-group-item-heading" ng-bind-html="post.title.rendered"></h4>
+        <p class="list-group-item-text" ng-bind-html="post.excerpt.rendered"></p>
       </a>
     </div>
   </div>
